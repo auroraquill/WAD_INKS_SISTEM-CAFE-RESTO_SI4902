@@ -1,0 +1,660 @@
+/* =========================================
+   1. GLOBAL RESET & BASE STYLES
+========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #1f2937;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. NAVBAR & HEADER
+========================================= */
+.navbar {
+    background: #ffffff;
+    color: #1f2937;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.navbar h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #4f46e5;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge-role {
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   3. LAYOUT CONTAINER & CARDS
+========================================= */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.menu-page-container {
+    max-width: 1000px !important;
+    margin: 30px auto !important;
+}
+
+.welcome-card, .card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    border: 1px solid #e5e7eb;
+}
+
+.card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-head h2 {
+    color: #1f2937;
+    font-size: 20px;
+}
+
+.card-subtitle {
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* =========================================
+   4. DASHBOARD GRID & MODULE CARDS
+========================================= */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card-module {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid #4f46e5;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-module:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card-module h3 {
+    margin-top: 0;
+    color: #1f2937;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card-module p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   5. MENU MODULE: MODERN GRID CARD LAYOUT
+========================================= */
+.menu-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.menu-card-item {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.menu-card-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #f3f4f6;
+}
+
+.menu-card-item h4 {
+    font-size: 16px;
+    color: #1f2937;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.menu-category {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.menu-price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4f46e5;
+    margin-bottom: 15px;
+}
+
+.empty-menu-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #6b7280;
+    padding: 40px;
+}
+
+/* =========================================
+   6. BUTTONS & ACTIONS
+========================================= */
+.btn, .btn-action, .btn-tambah, .btn-logout, .tombol-tambah {
+    display: inline-block;
+    padding: 9px 18px;
+    background: #4f46e5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: fit-content;
+}
+
+.btn:hover, .btn-action:hover, .btn-tambah:hover, .tombol-tambah:hover {
+    background: #4338ca;
+}
+
+.btn-logout {
+    background: #dc2626;
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+.btn-logout:hover {
+    background: #b91c1c;
+}
+
+.btn-tambah, .tombol-tambah {
+    background: #059669;
+    margin-bottom: 0;
+}
+
+.btn-tambah:hover, .tombol-tambah:hover {
+    background: #047857;
+}
+
+/* Tombol Aksi di dalam Card Menu */
+.menu-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.menu-actions form {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    display: inline-block;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+.aksi, .btn-action-table {
+    padding: 6px 14px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+}
+
+.aksi.edit, .btn-edit { background: #d97706 !important; }
+.aksi.edit:hover, .btn-edit:hover { background: #b45309 !important; }
+
+.aksi.hapus, .btn-delete { background: #dc2626 !important; }
+.aksi.hapus:hover, .btn-delete:hover { background: #b91c1c !important; }
+
+/* =========================================
+   7. TABLES
+========================================= */
+table, .tabel-pegawai {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background: #f9fafb;
+    color: #374151;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: #f9fafb;
+}
+
+/* =========================================
+   8. ALERTS & BADGES
+========================================= */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-tersedia { background: #d1fae5; color: #065f46; }
+.badge-terisi { background: #fee2e2; color: #991b1b; }
+
+.alert-success {
+    background: #d1fae5 !important;
+    color: #065f46 !important;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border: 1px solid #a7f3d0;
+}
+
+/* =========================================
+   9. FORM STYLES (CENTERED FOR CREATE/EDIT)
+========================================= */
+.form-page-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.form-page-body .container, 
+.form-page-body .card, 
+.form-page-body form {
+    width: 100%;
+    max-width: 600px;
+}
+
+form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px auto;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+form button[type="submit"], 
+form input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover, 
+form input[type="submit"]:hover {
+    background: #4338ca;
+}
+
+/* =========================================
+   PERBAIKAN MODAL KONFIRMASI HAPUS
+========================================= */
+/* Sembunyikan modal secara default sebelum tombol hapus diklik */
+.modal-overlay, 
+.modal-confirm, 
+div[style*="Hapus Pegawai"] {
+    display: none;
+}
+
+/* Hanya tampilkan saat statusnya aktif/show */
+.modal-overlay.show, 
+.modal-confirm.show {
+    display: flex !important;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* =========================================
+   MENURUNKAN POSISI TEKS & LOGO DI NAVBAR
+========================================= */
+.navbar {
+    padding: 20px 30px !important; /* Memperbesar padding atas dan bawah navbar */
+}
+
+.navbar .user-info {
+    display: flex;
+    align-items: center !important; /* Menyelajarkan teks dan logo agar di tengah secara vertikal */
+}
+
+/* =========================================
+   STYLING TAMBAHAN: NAVBAR & HALAMAN LOGIN
+========================================= */
+
+/* Navbar Konsisten */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #4f46e5;
+}
+
+.navbar .logo {
+    max-height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Container Terpusat untuk Login / Form */
+.container-center {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Styling Form Input Standar */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* =========================================
+   STYLING HALAMAN PROFIL
+========================================= */
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+.profile-table tr {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.profile-table tr:last-child {
+    border-bottom: none;
+}
+
+.profile-table td {
+    padding: 16px 15px;
+    color: #1f2937;
+    font-size: 14px;
+}
+
+.profile-table td.label-col {
+    font-weight: 600;
+    color: #4b5563;
+    width: 200px;
+}
+
+/* =========================================
+   STYLING FORM & INPUT MODEREN
+========================================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.form-checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.form-checkbox-group label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   STYLING FORMULIR & INPUT YANG KONSISTEN
+========================================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #1f2937;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.form-checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4f46e5;
+}
+
+.form-checkbox-group label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    margin-bottom: 0;
+}
